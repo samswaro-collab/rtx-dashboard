@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "lastRefreshed": "2026-04-19",
+    "lastRefreshedHuman": "April 19, 2026",
+    "nextRefresh": "2026-04-24",
+    "sources": {
+      "collins": "careers.rtx.com (Collins Aerospace filter)",
+      "pw": "careers.rtx.com (Pratt & Whitney filter)",
+      "raytheon": "careers.rtx.com (Raytheon filter)"
+    }
+  },
+  "rtx": {
+    "collins": {
+      "total": 827,
+      "locations": [
+        {
+          "city": "Cedar Rapids IA",
+          "roles": 164
+        },
+        {
+          "city": "Windsor Locks CT",
+          "roles": 80
+        },
+        {
+          "city": "Rockford IL",
+          "roles": 35
+        },
+        {
+          "city": "Riverside CA",
+          "roles": 30
+        },
+        {
+          "city": "Spokane WA",
+          "roles": 20
+        },
+        {
+          "city": "Opa-Locka FL",
+          "roles": 20
+        }
+      ]
+    },
+    "pw": {
+      "total": 505,
+      "locations": [
+        {
+          "city": "Middletown CT",
+          "roles": 183
+        },
+        {
+          "city": "East Hartford CT",
+          "roles": 172
+        },
+        {
+          "city": "Asheville NC",
+          "roles": 40
+        },
+        {
+          "city": "Oklahoma City OK",
+          "roles": 30
+        },
+        {
+          "city": "Midland GA",
+          "roles": 25
+        },
+        {
+          "city": "Columbus GA",
+          "roles": 20
+        }
+      ]
+    },
+    "raytheon": {
+      "total": 2575,
+      "locations": [
+        {
+          "city": "Tucson AZ",
+          "roles": 800
+        },
+        {
+          "city": "Andover MA",
+          "roles": 215
+        },
+        {
+          "city": "Tewksbury MA",
+          "roles": 180
+        },
+        {
+          "city": "McKinney TX",
+          "roles": 150
+        },
+        {
+          "city": "El Segundo CA",
+          "roles": 120
+        },
+        {
+          "city": "Manchester NH",
+          "roles": 80
+        }
+      ]
+    },
+    "totalRoles": 3907
+  }
+}

@@ -229,6 +229,11 @@
             background: rgba(255,255,255,0.3);
         }
 
+        /* ── Refresh Banner ── */
+        #refresh-banner{background:#eef7f6;border-bottom:1.5px solid #b2dbd8;padding:7px 28px;font-size:11.5px;color:#0a3d38;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+        #refresh-banner .rb-badge{background:#00565a;color:#fff;border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;letter-spacing:.5px;}
+        #refresh-banner .rb-badge.cached{background:#b45309;}
+
         /* ── KPI Bar ── */
         .kpi-bar {
             display: grid;
@@ -691,6 +696,9 @@
             <span class="sidebar-item-text">Fast-Sell Skills</span>
         </div>
 
+        <div class="sidebar-item" onclick="switchSection('actions')">
+            <span class="sidebar-item-text">🎯 Sales Actions</span>
+        </div>
         <div class="sidebar-item" onclick="switchSection('contacts')">
             <span class="sidebar-dot" style="background:#10b981;"></span>
             <span class="sidebar-item-text">Key Contacts</span>
@@ -884,6 +892,16 @@
                     <text x="34" y="24" font-family="'Arial Black','Franklin Gothic Medium',Arial,sans-serif" font-size="17" font-weight="900" fill="white" letter-spacing="2">RTX</text>
                 </svg>
             </div>
+        </div>
+
+        <!-- Refresh Banner -->
+        <div id="refresh-banner">
+            <span id="rb-badge" class="rb-badge">🔄 LOADING</span>
+            <span>Hiring data last refreshed: <strong id="rb-date">—</strong></span>
+            <span style="color:#5a6a8a;">·</span>
+            <span style="color:#5a6a8a;">Next auto-refresh: <span id="rb-next">—</span></span>
+            <span style="color:#5a6a8a;">·</span>
+            <span style="color:#5a6a8a;">Auto-refreshes every 5 days via GitHub Actions</span>
         </div>
 
         <!-- KPI Bar -->
@@ -3281,6 +3299,146 @@
             <!-- ════════════════════════════
                  SECTION: KEY CONTACTS
             ════════════════════════════ -->
+            <!-- ══════════ SALES ACTIONS ══════════ -->
+            <div id="actions" class="section-content">
+                <div class="section-header">
+                    <div class="section-color-bar" style="background:#f59e0b;"></div>
+                    <div>
+                        <h2 class="section-title">🎯 Targeted Sales Actions — RTX Corporation</h2>
+                        <p class="section-subtitle">Prioritized by urgency across Collins Aerospace · Pratt &amp; Whitney · Raytheon</p>
+                    </div>
+                </div>
+                <div style="background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:8px;padding:10px 16px;font-size:12px;color:#1b5e20;margin-bottom:20px;">
+                    ✅ <strong>Lead every conversation with:</strong> Cyient's RTX/Collins active staffing relationship · AS9100 &amp; NADCAP certified · 3,000+ aerospace engineers globally · 50+ engineers ramped in 2–3 months
+                </div>
+
+                <!-- COLLINS AEROSPACE -->
+                <div style="border-radius:12px;overflow:hidden;margin-bottom:20px;border:1.5px solid #c5d8f5;">
+                    <div style="background:linear-gradient(135deg,#0055a5,#0077cc);padding:12px 18px;color:#fff;display:flex;align-items:center;gap:10px;">
+                        <span style="font-size:20px;">✈️</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:800;">Collins Aerospace</div>
+                            <div style="font-size:11px;opacity:.85;">Windsor Locks CT · Burnham UK · Cedar Rapids IA · Bengaluru IN</div>
+                        </div>
+                        <span style="margin-left:auto;background:rgba(255,255,255,0.2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;">~2,100 open roles</span>
+                    </div>
+                    <div style="padding:16px 18px;display:flex;flex-direction:column;gap:11px;">
+                        <div style="display:flex;gap:11px;background:#f8faff;border-radius:8px;padding:11px 14px;border-left:4px solid #c62828;">
+                            <div style="background:#c62828;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🔴 Actuation &amp; Flight Control — Burnham UK (HOT)</strong><br/>
+                                Collins is ramping actuation systems for A320neo, B787, and eVTOL programs. Mechanical design, hydraulics, and systems engineers urgently needed. Cyient's UK/India hybrid delivery is a direct cost advantage.<br/>
+                                <span style="color:#0055a5;">📌 Target: TA Business Partner — Collins Burnham / Advanced Structures</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Hydraulic systems · Actuation design · CATIA V5 · DO-178C-adjacent</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#f8faff;border-radius:8px;padding:11px 14px;border-left:4px solid #c62828;">
+                            <div style="background:#c62828;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🔴 Avionics SW &amp; Anthem / Pro Line — Cedar Rapids IA</strong><br/>
+                                Collins' avionics division is hiring DO-178C DAL A/B software engineers for Pro Line Fusion upgrades and next-gen Anthem cockpit. Cyient's DO-178C practice is a direct match.<br/>
+                                <span style="color:#0055a5;">📌 Target: Tim McCormick (Sr. Director TA — Collins Engineering)</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: DO-178C DAL A/B · Avionics SW · RTCA DO-254 · ARINC 653</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#f8faff;border-radius:8px;padding:11px 14px;border-left:4px solid #f57f17;">
+                            <div style="background:#f57f17;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🟡 Collins India (Bengaluru / Hyderabad) — Offshore Expansion</strong><br/>
+                                Collins' India engineering centers are growing fast. Software, systems engineering, and data analytics roles. Cyient's India delivery network makes us a direct delivery partner — not just a supplier.<br/>
+                                <span style="color:#0055a5;">📌 Target: Collins India TA Lead — search "Collins Aerospace India Talent Acquisition"</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Systems Eng. · SW Dev · Data Analytics · MBSE/SysML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRATT & WHITNEY -->
+                <div style="border-radius:12px;overflow:hidden;margin-bottom:20px;border:1.5px solid #fde68a;">
+                    <div style="background:linear-gradient(135deg,#92400e,#d97706);padding:12px 18px;color:#fff;display:flex;align-items:center;gap:10px;">
+                        <span style="font-size:20px;">🔥</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:800;">Pratt &amp; Whitney</div>
+                            <div style="font-size:11px;opacity:.85;">East Hartford CT · Middletown CT · West Palm Beach FL · Bengaluru IN</div>
+                        </div>
+                        <span style="margin-left:auto;background:rgba(255,255,255,0.2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;">~1,200 open roles</span>
+                    </div>
+                    <div style="padding:16px 18px;display:flex;flex-direction:column;gap:11px;">
+                        <div style="display:flex;gap:11px;background:#fffdf5;border-radius:8px;padding:11px 14px;border-left:4px solid #c62828;">
+                            <div style="background:#c62828;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🔴 GTF MRO Surge — East Hartford &amp; Middletown CT</strong><br/>
+                                GTF engine MRO ramp is a multi-year surge. P&amp;W needs MRO engineers, technical publication writers, and quality engineers to support hundreds of GTF shop visits per year. Entry via existing Cyient MRO practice.<br/>
+                                <span style="color:#92400e;">📌 Target: P&amp;W TA Business Partner — East Hartford CT (GTF MRO)</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: MRO Engineer · Tech Pubs (IETM/S1000D) · Quality Eng. (AS9100) · Engine Overhaul</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#fffdf5;border-radius:8px;padding:11px 14px;border-left:4px solid #c62828;">
+                            <div style="background:#c62828;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🔴 GTF Thermal Management — Turbine &amp; Combustor Engineering</strong><br/>
+                                P&amp;W's GTF Next program requires turbine aero, combustor design, and heat transfer engineers. Hard-to-source niche — Cyient's turbomachinery practice is a direct fit.<br/>
+                                <span style="color:#92400e;">📌 Target: P&amp;W Engineering TA — West Palm Beach FL (Military) or East Hartford (Commercial)</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Turbine Aero · Combustor Design · CFD (ANSYS Fluent) · Thermal Analysis</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#fffdf5;border-radius:8px;padding:11px 14px;border-left:4px solid #f57f17;">
+                            <div style="background:#f57f17;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🟡 F135 Engine Sustainment — Military (West Palm Beach FL)</strong><br/>
+                                F135 engine powers every F-35. Ongoing sustainment program drives non-clearance structures, test, and tech pubs needs. Low security barrier for most engineering roles.<br/>
+                                <span style="color:#92400e;">📌 Target: P&amp;W Military TA — West Palm Beach FL</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Structural Analysis · Fatigue &amp; Fracture · Tech Pubs (ATA iSpec 2200) · Test Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RAYTHEON -->
+                <div style="border-radius:12px;overflow:hidden;margin-bottom:20px;border:1.5px solid #e9d5ff;">
+                    <div style="background:linear-gradient(135deg,#4a0072,#7b1fa2);padding:12px 18px;color:#fff;display:flex;align-items:center;gap:10px;">
+                        <span style="font-size:20px;">🛡️</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:800;">Raytheon Missiles &amp; Defense</div>
+                            <div style="font-size:11px;opacity:.85;">Tucson AZ · McKinney TX · Tewksbury MA · Andover MA</div>
+                        </div>
+                        <span style="margin-left:auto;background:rgba(255,255,255,0.2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;">~600 open (non-clearance)</span>
+                    </div>
+                    <div style="padding:16px 18px;display:flex;flex-direction:column;gap:11px;">
+                        <div style="background:#fdf4ff;border-radius:8px;padding:10px 14px;border:1px solid #e9d5ff;font-size:11.5px;color:#4a0072;margin-bottom:4px;">
+                            ⚠️ <strong>Clearance note:</strong> Most Raytheon roles require clearance. The actions below target the non-clearance pocket — supply chain, systems engineering (unclassified), IT, and technical publications.
+                        </div>
+                        <div style="display:flex;gap:11px;background:#fdf4ff;border-radius:8px;padding:11px 14px;border-left:4px solid #c62828;">
+                            <div style="background:#c62828;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🔴 Missile Production Ramp — Systems Eng. Augmentation (Tucson AZ)</strong><br/>
+                                Patriot, AMRAAM, and Stinger are in emergency production ramp mode. Raytheon needs systems engineers, ILS engineers, and tech pubs writers — non-clearance roles available. Entry via Collins or P&amp;W warm intro.<br/>
+                                <span style="color:#7b1fa2;">📌 Target: Raytheon M&amp;D TA — Tucson AZ · Approach via Collins contacts for intro</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Systems Eng. · ILS · Tech Pubs · Supply Chain Data Analyst</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#fdf4ff;border-radius:8px;padding:11px 14px;border-left:4px solid #f57f17;">
+                            <div style="background:#f57f17;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🟡 IAMD Systems Integration — McKinney TX &amp; Tewksbury MA</strong><br/>
+                                Integrated Air &amp; Missile Defense requires multi-domain system integration engineers. Non-clearance systems architects and C2 SW engineers needed for unclassified integration layers.<br/>
+                                <span style="color:#7b1fa2;">📌 Target: Raytheon IAMD TA — McKinney TX or Tewksbury MA</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: Systems Architect · MBSE/SysML · C2 SW · DevSecOps (unclassified)</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:11px;background:#fdf4ff;border-radius:8px;padding:11px 14px;border-left:4px solid #2e7d32;">
+                            <div style="background:#2e7d32;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</div>
+                            <div style="font-size:12px;line-height:1.6;">
+                                <strong>🟢 RTX Enterprise IT / Supply Chain (Cross-BU)</strong><br/>
+                                Post-merger RTX is consolidating supply chain data and ERP systems across all three BUs. SAP S/4HANA and supply chain data steward roles are non-clearance. Use Collins as the warm intro path.<br/>
+                                <span style="color:#7b1fa2;">📌 Target: RTX Enterprise IT TA — Arlington VA (HQ)</span><br/>
+                                <span style="color:#c62828;font-size:11px;">⚡ Fast-sell: SAP S/4HANA · Supply Chain Data Steward · DevSecOps · Data Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="contacts" class="section-content">
                 <div class="section-header">
                     <div class="section-color-bar" style="background:#10b981;"></div>
@@ -6164,10 +6322,34 @@
     }
 
     // Fetch live data, fall back gracefully
+    var _short = {month:'short',day:'numeric',year:'numeric'};
     fetch(RTX_DATA_URL + '?t=' + Date.now())
         .then(function(res) { return res.json(); })
-        .then(function(json) { renderRTXData(json.rtx); })
-        .catch(function() { renderRTXData(FALLBACK_RTX); });
+        .then(function(json) {
+            renderRTXData(json.rtx);
+            // Populate refresh banner
+            var meta = json.meta || {};
+            var rbBadge = document.getElementById('rb-badge');
+            var rbDate  = document.getElementById('rb-date');
+            var rbNext  = document.getElementById('rb-next');
+            var lu      = document.getElementById('last-updated');
+            if (meta.lastRefreshed) {
+                var d = new Date(meta.lastRefreshed).toLocaleDateString('en-US', _short);
+                if (rbDate)  rbDate.textContent  = d;
+                if (rbBadge) { rbBadge.textContent = '🟢 LIVE DATA'; rbBadge.classList.remove('cached'); }
+                if (lu)      lu.textContent = d;
+            }
+            if (meta.nextRefresh && rbNext) {
+                rbNext.textContent = new Date(meta.nextRefresh).toLocaleDateString('en-US', _short);
+            }
+        })
+        .catch(function() {
+            renderRTXData(FALLBACK_RTX);
+            var rbBadge2 = document.getElementById('rb-badge');
+            var rbDate2  = document.getElementById('rb-date');
+            if (rbBadge2) { rbBadge2.textContent = '🟡 CACHED'; rbBadge2.classList.add('cached'); }
+            if (rbDate2)  rbDate2.textContent = new Date().toLocaleDateString('en-US', _short) + ' (fallback)';
+        });
 
     // Page footer date
     (function() {

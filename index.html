@@ -701,19 +701,22 @@
         </div>
         <div class="sidebar-acq-meta">EVM · IMS · Risk · Schedule<br>60–80 roles across RTX</div>
 
-        <div class="sidebar-section-label">Strategic / Future Scope</div>
-
-        <div class="sidebar-item" onclick="switchSection('cleared-jobs')">
-            <span class="sidebar-dot" style="background:#7f1d1d;"></span>
-            <span class="sidebar-item-text">🔐 Clearance Landscape</span>
-            <span class="sidebar-badge" style="background:#dc2626;">Future</span>
-        </div>
-        <div class="sidebar-acq-meta">Acquisition Planning Data<br>FOCI Mitigation Strategy</div>
-
         <div class="sidebar-item" onclick="switchSection('outreach')">
             <span class="sidebar-dot" style="background:#10b981;"></span>
             <span class="sidebar-item-text">&#129309; Outreach Playbook</span>
             <span class="sidebar-badge" style="background:#10b981;">Cold&#8594;Warm</span>
+        </div>
+
+        <!-- ── Admin-only: Clearance Landscape (pinned to bottom) ── -->
+        <div id="clearance-nav-wrap" style="display:none; margin-top:auto;">
+            <div style="height:1px; background:rgba(255,255,255,0.06); margin:12px 0 4px;"></div>
+            <div style="padding:4px 16px 2px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#7f1d1d;">Admin Access Only</div>
+            <div class="sidebar-item" onclick="switchSection('cleared-jobs')">
+                <span class="sidebar-dot" style="background:#7f1d1d;"></span>
+                <span class="sidebar-item-text">&#128274; Clearance Landscape</span>
+                <span class="sidebar-badge" style="background:#dc2626;">Future</span>
+            </div>
+            <div class="sidebar-acq-meta">Acquisition Planning Data<br>FOCI Mitigation Strategy</div>
         </div>
 
         <div class="sidebar-footer">
@@ -4517,8 +4520,23 @@
 </div><!-- /container -->
 
 <script>
+    // ── Role check (set by beakon_hub.html via sessionStorage) ──
+    var _beakonRole = (function() {
+        try { return JSON.parse(sessionStorage.getItem('beakon_session') || '{}').role || ''; } catch(e) { return ''; }
+    })();
+
+    // Show admin-only sidebar items
+    if (_beakonRole === 'admin') {
+        var wrap = document.getElementById('clearance-nav-wrap');
+        if (wrap) wrap.style.display = 'block';
+    }
+
     // ── Section switching ──
     function switchSection(sectionId) {
+        // Guard: Clearance Landscape is admin-only
+        if (sectionId === 'cleared-jobs' && _beakonRole !== 'admin') {
+            return; // silently block non-admin access
+        }
         document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.sidebar-item').forEach(l => l.classList.remove('active'));
         document.getElementById(sectionId).classList.add('active');
